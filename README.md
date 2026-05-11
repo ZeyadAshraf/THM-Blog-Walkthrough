@@ -29,9 +29,11 @@ Port 139/445 (SMB): Anonymous login allowed, exposing shared resources.
 
 ---
 
-## 1.2 SMB Enumeration
-
-Using smbclient, I successfully accessed the BillySMB share without credentials. This allowed for the exfiltration of media files and metadata, providing critical context about the target user.
+### 1.2 SMB Enumeration (Surface Analysis)
+Using `smbclient` and `enum4linux`, I performed a deep scan of the SMB shares.
+* **Findings:** The `BillySMB` share was accessible as a guest.
+* **Outcome:** After thorough manual inspection of the available files and metadata, no direct vulnerabilities or sensitive credentials were discovered.
+* **Strategic Decision:** This path was documented as a "Dead End" for direct exploitation, leading the assessment to shift focus toward the Web Application layer (WordPress) for initial access.
 
 ---
 
@@ -48,6 +50,8 @@ Leveraging Burp Suite Intruder, I targeted the user kwheel based on enumerated d
 Credential Found: kwheel : cutiepie1
 
 Evidence: A successful 302 Redirect response was observed, confirming login.
+
+![burp suite Process](image_452e6a.png)
 
 ---
 
@@ -111,6 +115,8 @@ Bash
 export admin=true
 /usr/sbin/checker
 Result: Instant transition to the root user.
+
+![ Congrats Mr root # ](image_12bb50e.png)
 
 ----
 ## 🎯 Conclusion & Remediation
