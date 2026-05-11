@@ -21,7 +21,7 @@ This report documents the end-to-end security assessment and exploitation of the
 The initial phase started with an intensive **Nmap** scan to identify open ports and services.
 
 ```bash
-nmap -sV -sC  -oN nmap_results.txt 10.10.x.x
+nmap -sV -sC  -oN nmap_results.txt 10.114.185.79
 Port 80 (HTTP): Hosting a legacy WordPress 5.0 instance.
 
 Port 139/445 (SMB): Anonymous login allowed, exposing shared resources.
